@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML 연습</title>
+
+    <!-- Google ICON 리소스 가져오기-->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet">
+
+    <!-- style은 head 내부에서 -->
+    <style>
+        body{
+            margin : 0px;
+            padding : 0px;
+        }
+        header{
+            width : 100%;
+            background-color: #005766;
+            height : 200px;
+        }
+        /* > : 바로 밑 자식한테만 적용 */
+        header > div{   
+            float : left;
+        }
+        /* header 밑 모든 h1, p에 적용 */
+        /* margin: 내부 여백 */
+        header h1, header p{
+            color:white;
+            text-align: center;
+            margin:30px;
+        }
+        header img{
+            height : 150px;
+            padding : 20px;
+        }
+        nav{
+            /* clear: both 초기화 설명 필요*/
+            clear:both;
+            background-color: #3db7cc;
+            height: 40px;
+        }
+        nav a{
+            width: 100px;
+            height: 40px;
+            padding: 5px;
+            display: inline-block;
+            text-decoration: none;
+            text-align: center;
+        }
+        section{
+            margin: 10px;
+            padding: 10px;
+            width: 45%;
+            height: 200px;
+            float: left;
+            border: 1px solid #3db7cc;
+            box-sizing: border-box;
+        }
+        h2{
+            margin: 5px;
+            padding: 10px;
+            background-color: #005766;
+            color: rgb(255, 255, 255);
+        }
+        section p, section, ul, section ol{
+            padding-left: 50px;
+        }
+        section a{
+            width:80%;
+            height:5px;
+            padding:5px;
+        }
+        footer{
+            clear:both;
+            height: 50px;
+            background-color: #eaeaea;
+            color: #5d5d5d;
+            padding: 20px;
+            font-size:12px;
+        }
+        /* 클래스 style은 . 으로 시작 */
+        .sc1{
+            color: red;
+        }
+        /* id는 # */
+        #test{
+            color: black;
+        }
+
+    </style>
+    
+    <!-- Scripts는 head내에 만든다 -->
+    <!-- 버튼을 누르면 사진이 뜬다 -->
+    <script>
+        var hidden = false;
+        function hide() {
+            hidden = !hidden;
+            if(hidden){
+                document.getElementById("demo").style.display="none";
+                document.getElementById("fig").src="./capture.PNG";
+            }
+        }
+    </script>
+
+    <!-- bootstrap 추가하기 -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+
+</head>
+
+<body>
+
+    <!-- bootstrap 추가하기 -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+
+    <header>
+        <!-- 버튼 -->
+        <div>
+            <!-- bootstrap으로 추가해봤습니다-->
+            <button type="button" class="btn btn-outline-warning" id="demo" onclick="hide();">
+                Dispaly figure</button>
+
+            <!--
+            <button id="demo" onclick="hide();">
+            Display figure</button>
+            -->
+        </div>
+
+        <div>
+            <img src="" alt="사진이 없습니다." id="fig">
+        </div>
+
+        <h1>KIM HYUN JOE</h1>
+        <p>김현조</p>
+    </header>
+
+    <nav>
+        <a href="#s1">[개인정보]</a>&nbsp;&nbsp; <!-- 공백 -->
+        <a href="#s2">[이수과목]</a>&nbsp;&nbsp;
+        <a href="#s3">[수강과목]</a>&nbsp;&nbsp;
+        <a href="#s4">[자기소개]</a>&nbsp;&nbsp;
+    </nav>
+
+    <section id="s1">
+        <h2>개인정보</h2>
+
+        <ul>
+            <!-- Google ICON - USAGE 코드 복붙 후 리소스 링크 가져오기-->
+            <span class="material-icons">phone</span> 010-6329-3141 <br>
+            <span class="material-icons">mail</span> clara_31@naver.com <br>
+            <span class="material-icons">assignment</span> 인하대학교 
+        </ul>
+    </section>
+
+    <section class="sc1" id="s2">
+        <h2 class="c1" id="test">이수과목</h2>
+        <ol>
+            <li>객체지향프로그래밍</li>
+            <li>자료구조</li>
+            <li>프로그래밍실습</li>
+            <li>알고리즘설계</li>
+        </ol>
+    </section>
+
+    <section class="sc2" id="sc3">
+        <h2 class="c2">수강과목</h2>
+        <ul>
+            <li><a href="https://www.inha.ac.kr/kr/968/subview.do?&enc=Zm5jdDF8QEB8JTJGZmFjdWx0eVNlYXJjaCUyRmtyJTJGbmFtZUxpc3QuZG8lM0ZrbmFtZSUzRCVFQyVCNSU5QyVFQyU5QiU5MCVFQyU5RCVCNSUyNmluaGFpZCUzRDExOTMzRDdDRjc1N0M0NzA2NjJGNEZFN0YwMUQ1QzA0RDE5RDg4QjI0MDI4N0U3MDdCOTI1Q0NFM0VEQTk5RjJGNUQxQjQ4NEJFM0Y2ODBGNDlBM0UwMkVBQzk3MENCMzQyNDgxQ0IzMEQ3NzNGRTM4MTdFMDJDRjNGNUM4MTAxJTI2">
+                데이터베이스설계</a>
+            </li>
+            <!-- 과제 -->
+            <!-- 수강과목 3개 추가하기 (하이퍼링크 포함)-->
+            <li><a href="https://www.inha.ac.kr/search/search.jsp">
+                객체지향프로그래밍</a>
+            </li>
+            <li><a href="https://www.inha.ac.kr/search/search.jsp">
+                자료구조론</a>
+            </li>
+            <li><a href="https://www.inha.ac.kr/search/search.jsp">
+                정보보호론</a>
+            </li>
+        </ul>
+    </section>
+
+    <section class="sc2" id="sc4">
+        <h2 class="c2">자기소개</h2>
+        <p id="p1"></p>
+        <!-- 과제-->
+        <!-- 학과 / 이름/ 수강 포부(?) -->
+        <ul>
+            <li>정보통신공학과 18학번</li>
+            <li>김현조</li>
+            <li>이번 DB 수업을 열심히 들어서 심화적인 웹개발을 할 수 있도록 노력하겠습니다!</li>
+        </ul>
+    </section>
+
+    <footer>
+        &copy;KIM HYUN JOE / clara_31@naver.com
+    </footer>
+
+</body>
+</html>
